@@ -74,12 +74,16 @@ Winning streak analysis was kept at the team-era level because a winning streak 
 
 The Los Angeles Lakers rank first in this dataset when regular-season and playoff wins are combined.
 
-| Franchise          | Regular Season Wins | Playoff Wins | Combined Wins |
-| ------------------ | ------------------: | -----------: | ------------: |
-| Los Angeles Lakers |               3,193 |          402 |         3,595 |
-| Boston Celtics     |               3,210 |          356 |         3,566 |
+| Franchise | Regular Season Wins | Playoff Wins | Combined Wins |
+|---|---:|---:|---:|
+| Los Angeles Lakers | 3,193 | 402 | 3,595 |
+| Boston Celtics | 3,210 | 356 | 3,566 |
 
 The ranking changes depending on whether regular-season wins, playoff wins, or combined wins are used. This highlights the importance of clearly defining the metric when comparing historical franchise performance.
+
+![Top 10 NBA Franchises by All-Time Wins](images/q1_franchise_wins.png)
+
+*Top 10 NBA franchises ranked by combined regular-season and playoff wins in the dataset.*
 
 ### 2. NBA Scoring Has Changed Dramatically
 
@@ -89,11 +93,15 @@ The highest average scoring decade in this dataset is the **1960s**, at approxim
 
 The 1990s and 2000s show noticeably lower scoring levels before scoring increased again in the 2010s and 2020s.
 
+![NBA Scoring by Decade](images/q2_scoring_by_decade.png)
+
+*Average combined points per game by decade. Scoring peaked in the 1960s before declining through the 1990s and 2000s, followed by a renewed increase in the 2010s and 2020s.*
+
 ### 3. Highest Franchise Scoring Averages
 
 The Phoenix Suns have the highest average points per game among franchises meeting the minimum games-played threshold, averaging approximately **107.8 points per game**.
 
-The Denver Nuggets and Los Angeles Lakers follow with approximately **107.6** and **105.7** points per game, respectively.
+The Denver Nuggets and Los Angeles Lakers follow with approximately **107.6** and **105.7 points per game**, respectively.
 
 ### 4. Longest Winning Streak
 
@@ -103,9 +111,13 @@ This streak occurred during one of the most successful regular seasons in NBA hi
 
 ### 5. 1971–72 Lakers Scoring Trend
 
-A **5-game rolling average** was used to examine how the Lakers' scoring changed throughout their 1971–72 season.
+A 5-game rolling average was used to examine how the Lakers' scoring changed throughout their 1971–72 season.
 
 The rolling average helps smooth individual game fluctuations and provides a clearer view of scoring trends across the season.
+
+![1971–72 Lakers Scoring Trend](images/q5_lakers_rolling_avg.png)
+
+*Game-by-game scoring and the 5-game rolling average for the 1971–72 Los Angeles Lakers.*
 
 ### 6. Home-Court Advantage
 
@@ -115,13 +127,16 @@ Their home win percentage was approximately **64.8%**, compared with **34.9%** a
 
 ### 7. NBA Draft Outcomes
 
-First-round selections had substantially higher NBA appearance rates than later-round selections.
+Draft position shows a substantial difference in the likelihood that a player eventually appeared in an NBA game.
 
-* **First Round:** 73.4% appeared in the NBA
-* **Later Rounds:** 22.3% appeared in the NBA
+- **1st Round:** 73.4% of drafted players appeared in the NBA, while 26.6% never appeared.
+- **Later Rounds:** 22.3% of drafted players appeared in the NBA, while 77.7% never appeared.
 
-This demonstrates the strong relationship between draft position and the likelihood of reaching an NBA game.
+This suggests that first-round selections were considerably more likely to reach the NBA than players selected in later rounds.
 
+![NBA Draft Outcomes](images/q7_draft_outcomes.png)
+
+*Percentage of drafted players who never appeared in an NBA game, comparing first-round selections with later-round selections.*
 ## Tableau Dashboard
 
 The interactive dashboard brings together all seven analyses in a single view.
