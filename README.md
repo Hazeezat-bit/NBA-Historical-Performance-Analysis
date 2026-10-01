@@ -45,7 +45,7 @@ The 1971–72 Los Angeles Lakers won 33 consecutive games, the longest winning s
 
 During the Lakers' streak (November 5, 1971 to January 7, 1972), they averaged about 123 points per game, compared with about 116 in the rest of their games that year (playoff games included, which tend to be lower-scoring). Their scoring then fell in the final weeks of the season.
 
-![1971-72 Lakers Scoring Trend](q5_lakers_rolling_avg.png)
+![1971-72 Lakers Scoring Trend](1971-72 Lakers Scoring Trend.png)
 
 A winning streak belongs to a specific team and season, not to a franchise's whole history, so this chapter is analyzed at the team-era level.
 
