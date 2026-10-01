@@ -1,194 +1,98 @@
-# NBA Historical Performance Analysis
+# Beyond the Box Score: How the NBA Has Changed
 
-## Overview
+![NBA Dashboard](nba_dashboard_overview.png)
 
-This project analyzes NBA historical performance from **1946–2023** using SQL, Python, and Tableau.
+**An investigation into 77 years of NBA history — how the game changed, how difficult talent is to predict, and what sustained dominance looks like.**
 
-The analysis focuses on franchise performance, scoring trends, winning streaks, home-court advantage, and NBA Draft outcomes. The goal is to transform historical NBA game and player data into clear, data-driven insights that support performance analysis and decision-making.
+## The Question
 
-## Business Questions
+Basketball in 1946 was a very different game from the NBA we watch today. But what actually changed? Not just the players, but how the game is scored, how teams identify talent, and what sustained dominance looks like.
 
-The analysis answers seven key questions:
+I analyzed 64,000+ NBA games and thousands of draft records from 1946–2023 to investigate three questions.
 
-1. Which NBA franchises have the most all-time wins?
-2. How has NBA scoring changed across decades?
-3. Which NBA franchises have the highest average points per game?
-4. What are the longest winning streaks in NBA history?
-5. How did the 1971–72 Los Angeles Lakers perform throughout their historic season?
-6. Which franchises have benefited most from home-court advantage?
-7. How successful are NBA Draft picks across different draft rounds?
+## Chapter 1: The Game Changed
 
-## Dataset
+**How has scoring evolved across NBA history?**
 
-The project uses the **Kaggle NBA database**, containing historical NBA game, team, player, and draft information.
+Scoring didn't just rise over time. It went up, down, and back up again.
 
-The database covers NBA history from **1946 through 2023** and includes tables related to:
+- **1960s:** the highest of any decade in the data, at about 228 combined points per game
+- **2000s:** the low point, at about 194
+- **2020s:** back up to about 224 (a partial decade in the data)
 
-* Games
-* Teams
-* Players
-* Draft history
-* Player information
-* Game statistics
-* Team information
+![NBA Scoring by Decade](q2_scoring_by_decade.png)
 
-For the analysis, relevant SQL queries were used to extract and transform the required datasets, which were then exported as CSV files for visualization in Tableau.
+The 2020s reach a similar scoring level, but with a shot that barely existed in the 1960s. The three-point line didn't arrive until 1979–80. In the 1990s, the first decade with complete data, teams combined for about 24 three-point attempts per game. By the 2020s that was about 70.
 
-## Tools & Technologies
+**What patterns accompanied the shifts?** Three-point attempts rose sharply during the same years that scoring recovered, which fits the modern "three-point era." But this analysis shows the pattern, not the cause. And the data has no shot or pace information for the 1960s, so it can show that scoring peaked then, but not why.
 
-* **SQL / SQLite** — data extraction, transformation, aggregation, and analysis
-* **Python** — data processing and analysis
-* **Pandas** — data manipulation
-* **Matplotlib** — exploratory visualization
-* **Tableau Public** — interactive dashboard development
-* **Jupyter Notebook** — analysis workflow
-* **GitHub** — project documentation and version control
+## Chapter 2: Talent Is Uncertain
 
-## Data Processing
+**How strongly does draft position predict whether a player ever reaches the NBA?**
 
-The analysis involved:
+- **First-round picks:** 73.4% appeared in an NBA game
+- **Later-round picks:** 22.3% did
 
-* Extracting historical game and player data using SQL
-* Separating regular-season and playoff performance
-* Consolidating NBA team identities at the franchise level where appropriate
-* Calculating franchise win totals
-* Calculating average scoring by decade
-* Calculating franchise-level scoring averages
-* Identifying historical winning streaks using SQL window functions
-* Calculating a 5-game rolling scoring average for the 1971–72 Los Angeles Lakers
-* Measuring home versus away win percentages
-* Analyzing NBA Draft outcomes by draft round
-* Exporting analysis results into CSV files for Tableau visualization
+Draft position is strongly associated with the likelihood that a player appears in an NBA game. Even among first-round selections, more than 1 in 4 never appeared in an NBA game.
 
-### Franchise vs. Team-Era Analysis
+![NBA Draft Outcomes](q7_draft_outcomes.png)
 
-Different questions require different levels of analysis.
+**Caveat:** "appeared in an NBA game" is the only success measure available here. It says nothing about career length, performance, or stardom. The early NBA also had far fewer roster spots, so some of the gap may reflect the era, not just draft position.
 
-Franchise-level analysis was used for questions involving long-term franchise performance, including wins, scoring averages, and home-court advantage. Historical franchise identities were consolidated using team IDs to account for relocations and name changes.
+## Chapter 3: What Does Sustained Dominance Look Like?
 
-Winning streak analysis was kept at the team-era level because a winning streak belongs to a specific team season rather than the entire history of a franchise.
+The 1971–72 Los Angeles Lakers won 33 consecutive games, the longest winning streak identified in this dataset. The next longest is 28, by the Golden State Warriors, and that streak stretched across two seasons.
 
-## Key Insights
+During the Lakers' streak (November 5, 1971 to January 7, 1972), they averaged about 123 points per game, compared with about 116 in the rest of their games that year (playoff games included, which tend to be lower-scoring). Their scoring then fell in the final weeks of the season.
 
-### 1. All-Time Franchise Wins
+![1971-72 Lakers Scoring Trend](q5_lakers_rolling_avg.png)
 
-The Los Angeles Lakers rank first in this dataset when regular-season and playoff wins are combined.
+A winning streak belongs to a specific team and season, not to a franchise's whole history, so this chapter is analyzed at the team-era level.
 
-| Franchise | Regular Season Wins | Playoff Wins | Combined Wins |
-|---|---:|---:|---:|
-| Los Angeles Lakers | 3,193 | 402 | 3,595 |
-| Boston Celtics | 3,210 | 356 | 3,566 |
+## Additional Findings
 
-The ranking changes depending on whether regular-season wins, playoff wins, or combined wins are used. This highlights the importance of clearly defining the metric when comparing historical franchise performance.
+Three additional findings help put the main story in context:
 
-![Top 10 NBA Franchises by All-Time Wins](images/q1_franchise_wins.png)
+- **All-time wins:** the Lakers lead with 3,595 combined regular-season and playoff wins, just ahead of the Celtics at 3,566. But the Celtics lead in regular-season wins alone (3,210 vs 3,193), so "greatest franchise" depends on how you define success.
+- **Home-court advantage:** the Atlanta Hawks show the biggest gap, winning about 65% of home games versus about 35% away.
+- **Highest-scoring franchise:** the Phoenix Suns average about 108 points per game.
 
-*Top 10 NBA franchises ranked by combined regular-season and playoff wins in the dataset.*
+## Why It Matters
 
-### 2. NBA Scoring Has Changed Dramatically
+A single metric rarely tells the whole story. Franchise rankings change depending on how success is defined, scoring averages can hide the forces behind them, and draft position does not guarantee an NBA career. The value of historical analysis is not simply finding the biggest number. It's understanding what that number measures, how it changes across contexts, and where the data stops being able to answer the question.
 
-Average total points per game increased substantially from the early decades of NBA history.
+## Explore the Full Analysis
 
-The highest average scoring decade in this dataset is the **1960s**, at approximately **227.9 total points per game**.
+- **[Interactive Tableau Dashboard →](https://public.tableau.com/app/profile/hazeezat.adebimpe.adebayo/viz/BeyondtheBoxScoreHowtheNBAHasChanged/SummaryDashbaord)** — start on the Summary tab for the quick take, or explore the Main Dashboard for the full story
+- **[Full SQL & Python Notebook →](NBA_Historical_Analysis.ipynb)** *(queries, methodology, and code)*
 
-The 1990s and 2000s show noticeably lower scoring levels before scoring increased again in the 2010s and 2020s.
+## About the Data
 
-![NBA Scoring by Decade](images/q2_scoring_by_decade.png)
+Source: Kaggle NBA database (SQLite), covering games, teams, players, and draft history from 1946 to 2023. Data was extracted with SQL, analyzed in Python, and visualized in Tableau Public. Franchises were consolidated by team ID to account for relocations and name changes (for example, the Minneapolis and Los Angeles Lakers).
 
-*Average combined points per game by decade. Scoring peaked in the 1960s before declining through the 1990s and 2000s, followed by a renewed increase in the 2010s and 2020s.*
+## Tools
 
-### 3. Highest Franchise Scoring Averages
-
-The Phoenix Suns have the highest average points per game among franchises meeting the minimum games-played threshold, averaging approximately **107.8 points per game**.
-
-The Denver Nuggets and Los Angeles Lakers follow with approximately **107.6** and **105.7 points per game**, respectively.
-
-### 4. Longest Winning Streak
-
-The longest winning streak identified in the analysis belongs to the **1971–72 Los Angeles Lakers**, who won **33 consecutive games**.
-
-This streak occurred during one of the most successful regular seasons in NBA history.
-
-### 5. 1971–72 Lakers Scoring Trend
-
-A 5-game rolling average was used to examine how the Lakers' scoring changed throughout their 1971–72 season.
-
-The rolling average helps smooth individual game fluctuations and provides a clearer view of scoring trends across the season.
-
-![1971–72 Lakers Scoring Trend](images/q5_lakers_rolling_avg.png)
-
-*Game-by-game scoring and the 5-game rolling average for the 1971–72 Los Angeles Lakers.*
-
-### 6. Home-Court Advantage
-
-The Atlanta Hawks recorded the largest home-versus-away win percentage difference among franchises meeting the minimum games-played threshold.
-
-Their home win percentage was approximately **64.8%**, compared with **34.9%** away from home, producing a **29.9 percentage-point home-court advantage**.
-
-### 7. NBA Draft Outcomes
-
-Draft position shows a substantial difference in the likelihood that a player eventually appeared in an NBA game.
-
-- **1st Round:** 73.4% of drafted players appeared in the NBA, while 26.6% never appeared.
-- **Later Rounds:** 22.3% of drafted players appeared in the NBA, while 77.7% never appeared.
-
-This suggests that first-round selections were considerably more likely to reach the NBA than players selected in later rounds.
-
-![NBA Draft Outcomes](images/q7_draft_outcomes.png)
-
-*Percentage of drafted players who never appeared in an NBA game, comparing first-round selections with later-round selections.*
-## Tableau Dashboard
-
-The interactive dashboard brings together all seven analyses in a single view.
-
-**View the interactive Tableau dashboard:**
-
-[Tableau Public Dashboard](https://public.tableau.com/app/profile/hazeezat.adebimpe.adebayo/viz/NBAHistoricalAnalysis/Dashboard1)
-
-## Project Structure
-
-```text
-NBA-Historical-Performance-Analysis/
-│
-├── NBA_Historical_Analysis.ipynb
-├── nba_analysis.sql
-├── README.md
-│
-├── q1_franchise_wins.csv
-├── q1_top2_comparison.csv
-├── q2_scoring_by_decade.csv
-├── q3_franchise_scoring_avg.csv
-├── q4_win_streaks.csv
-├── q5_lakers_rolling_avg.csv
-├── q6_home_advantage.csv
-├── q7_draft_outcomes.csv
-└── summary_stats.csv
-```
+SQL (SQLite) · Python (Pandas, Matplotlib) · Tableau Public · Jupyter Notebook · GitHub
 
 ## Limitations
 
-This analysis has several limitations that should be considered when interpreting the results:
+- The dataset ends in 2023, and the 2020s are only a partial decade.
+- The 1940s have a small sample, so early-decade comparisons should be read with care.
+- Three-point and turnover data are largely unavailable before 1980.
+- Three-point attempts increased alongside the modern scoring resurgence, but this analysis does not establish causation.
+- Franchise win totals differ slightly from some outside sources, likely due to how each source counts early games, relocations and playoffs.
+- Draft success is measured only by whether a player appeared in an NBA game.
+- Scoring figures are combined points for both teams in a game, not per-team averages.
+- The Lakers scoring comparison includes playoff games in the "rest of the season" group.
 
-* **Historical cutoff:** The underlying dataset ends in **2023**, so the analysis does not include the most recent NBA seasons.
+## Project Structure
 
-* **Uneven sample sizes across decades:** The 1940s and 2020s contain fewer games than complete decades. Therefore, comparisons across decades should be interpreted with sample size in mind.
-
-* **Franchise win definitions:** Historical franchise win totals can vary between sources depending on how franchise history, early league games, relocations, and playoff games are defined and counted.
-
-* **Draft success measurement:** Draft success is measured by whether a player appears in an NBA game based on the available player information. It does not measure career length, player performance, awards, or All-Star-level success.
-
-* **Dataset dependency:** The analysis is based on the structure, definitions, and completeness of the underlying Kaggle NBA database. Any missing or inconsistently recorded historical data may affect the results.
-
-## Key Takeaway
-
-NBA historical performance varies significantly depending on the metric used.
-
-The analysis demonstrates how **SQL can be used to transform large historical datasets into meaningful performance metrics**, while **Tableau makes those insights accessible through interactive visualizations**.
-
-The project also highlights the importance of defining metrics carefully when working with historical sports data, particularly when comparing franchises across different eras.
+    NBA-Historical-Performance-Analysis/
+    ├── NBA_Historical_Analysis.ipynb
+    ├── nba_analysis.sql
+    ├── README.md
+    └── (CSV exports and chart images)
 
 ## Author
 
-**Hazeezat Adebayo**
-
-Data Analyst | SQL | Python | Tableau | Data Visualization
+Hazeezat Adebayo | Data Analyst | SQL · Python · Tableau
