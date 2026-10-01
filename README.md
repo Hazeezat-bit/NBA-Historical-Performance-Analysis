@@ -1,6 +1,6 @@
 # Beyond the Box Score: How the NBA Has Changed
 
-![NBA Dashboard](nba_dashboard_overview.png)
+![NBA Dashboard](nba dashboard_overview.png)
 
 **An investigation into 77 years of NBA history — how the game changed, how difficult talent is to predict, and what sustained dominance looks like.**
 
