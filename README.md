@@ -36,7 +36,7 @@ The 2020s reach a similar scoring level, but with a shot that barely existed in 
 
 Draft position is strongly associated with the likelihood that a player appears in an NBA game. Even among first-round selections, more than 1 in 4 never appeared in an NBA game.
 
-![NBA Draft Outcomes](draft%outcomes.png)
+![NBA Draft Outcomes](draft%20outcomes.png)
 
 **Caveat:** "appeared in an NBA game" is the only success measure available here. It says nothing about career length, performance, or stardom. The early NBA also had far fewer roster spots, so some of the gap may reflect the era, not just draft position.
 
