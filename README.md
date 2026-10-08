@@ -2,7 +2,6 @@
 
 ![NBA Dashboard](nba%20dashboard%20overview.png)
 
-
 **An investigation into 77 years of NBA history — how the game changed, how difficult talent is to predict, and what sustained dominance looks like.**
 
 ## The Question
@@ -21,7 +20,7 @@ Scoring didn't just rise over time. It went up, down, and back up again.
 - **2000s:** the low point, at about 194
 - **2020s:** back up to about 224 (a partial decade in the data)
 
-![NBA Scoring by Decade](q2%scoring%by%decade.png)
+![NBA Scoring by Decade](q2_scoring_by_decade.png)
 
 The 2020s reach a similar scoring level, but with a shot that barely existed in the 1960s. The three-point line didn't arrive until 1979–80. In the 1990s, the first decade with complete data, teams combined for about 24 three-point attempts per game. By the 2020s that was about 70.
 
@@ -36,7 +35,7 @@ The 2020s reach a similar scoring level, but with a shot that barely existed in 
 
 Draft position is strongly associated with the likelihood that a player appears in an NBA game. Even among first-round selections, more than 1 in 4 never appeared in an NBA game.
 
-![NBA Draft Outcomes](draft%20outcomes.png)
+![NBA Draft Outcomes](q7_draft_outcomes.png)
 
 **Caveat:** "appeared in an NBA game" is the only success measure available here. It says nothing about career length, performance, or stardom. The early NBA also had far fewer roster spots, so some of the gap may reflect the era, not just draft position.
 
@@ -46,7 +45,7 @@ The 1971–72 Los Angeles Lakers won 33 consecutive games, the longest winning s
 
 During the Lakers' streak (November 5, 1971 to January 7, 1972), they averaged about 123 points per game, compared with about 116 in the rest of their games that year (playoff games included, which tend to be lower-scoring). Their scoring then fell in the final weeks of the season.
 
-![1971-72 Lakers Scoring Trend](1971-72%Lakers%Scoring%Trend.png)
+![1971-72 Lakers Scoring Trend](q5_lakers_rolling_avg.png)
 
 A winning streak belongs to a specific team and season, not to a franchise's whole history, so this chapter is analyzed at the team-era level.
 
